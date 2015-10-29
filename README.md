@@ -34,6 +34,7 @@ Argument | Description
 ```-cb <baudrate>``` | Select the baudrate to use, default is 115200.
 ```-ca <address>``` | Address in flash memory to upload the data to. This address is interpreted as hexadecimal. Default is 0x00000000.
 ```-cf <filename>``` | Upload the file to flash. Parameters that set the port, baud rate, and address must preceed the -cf command.
+```-ce``` | Erase flash
 
 Supported boards
 ----------------
@@ -64,11 +65,13 @@ or, equivalent:
 esptool -cp COM5 -cf 00000.bin -ca 0x40000 -cf 40000.bin
 ```
 
+##### Erase flash on a NodeMCU board
+```
+esptool -cp /dev/ttyUSB0 -cd nodemcu -ce
+```
 
 License
 -------
 Copyright (C) 2014 Christian Klippel <ck@atelier-klippel.de>.
 
 This code is licensed under GPL v2.
-
-
